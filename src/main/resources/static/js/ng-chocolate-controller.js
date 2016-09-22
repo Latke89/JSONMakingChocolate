@@ -1,6 +1,8 @@
 angular.module('ChocolateApp', [])
     .controller('ChocolateControl', function($scope, $http, $timeout) {
 
+        $scope.finishedChocolate;
+
         $scope.makeArray = function(arraySize) {
             var returnArray = [];
             for (var i = 0; i < arraySize; i++) {
@@ -30,7 +32,8 @@ angular.module('ChocolateApp', [])
                        function successCallback(response) {
                            console.log(response.data);
                            console.log("Adding data to scope");
-//                           $scope.todos = response.data;
+                           $scope.finishedChocolate = response.data;
+                           console.log($scope.finishedChocolate);
                        },
                        function errorCallback(response) {
                            console.log("Unable to get data");
@@ -40,5 +43,4 @@ angular.module('ChocolateApp', [])
 
 
         console.log("chocolate controller initialized");
-        $scope.testvar = "blargh";
 });
