@@ -36,17 +36,23 @@
     <input type="submit" ng-click="solveChocolate(info.numSmalls, info.numBigs, info.numGoal)" value="Solve Chocolate"/>
 </span>
 
-<div ng-repeat="chocIndex in makeArray(info.numBigs - finishedChocolate.bigs)">
+
+<div ng-repeat="chocIndex in makeArray(info.numBigs)">
     <div class="choc-big-bar">{{chocIndex + 1}}</div>
 </div>
-<div ng-repeat="chocIndex in makeArray(info.numSmalls - finishedChocolate.smalls)">
+<div ng-repeat="chocIndex in makeArray(info.numSmalls)">
     <div class="choc-small-bar">{{chocIndex + 1}}</div>
 </div>
+
 
 <br/><br/><br/><br/><br/><br/><br/><br/>
 
 
+<span ng-if="finishedChocolate.hasSolution==false">
+    <h1>Not enough chocolate D'=</h1>
+</span>
 
+<span ng-if="finishedChocolate.hasSolution==true">
 <div ng-repeat="finishIndex in makeArray(finishedChocolate.bigs)">
     <div class="choc-big-bar"> {{finishIndex + 1}} </div>
 </div>
@@ -54,6 +60,7 @@
 <div ng-repeat="finishIndex in makeArray(finishedChocolate.smalls)">
     <div class="choc-small-bar"> {{finishIndex + 1}} </div>
 </div>
+</span>
 
 <!--{{testvar}}-->
 

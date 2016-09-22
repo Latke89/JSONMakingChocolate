@@ -36,8 +36,11 @@ angular.module('ChocolateApp', [])
                            console.log("Adding data to scope");
                            $scope.finishedChocolate = response.data;
                            console.log($scope.finishedChocolate);
-                           $scope.info.numBigs = $scope.info.numBigs - $scope.finishedChocolate.bigs;
-                           $scope.info.numSmalls = $scope.info.numSmalls - $scope.finishedChocolate.smalls;
+                           if ($scope.finishedChocolate.hasSolution == true) {
+                               alert("Inside the if statement");
+                               $scope.info.numBigs = $scope.info.numBigs - $scope.finishedChocolate.bigs;
+                               $scope.info.numSmalls = $scope.info.numSmalls - $scope.finishedChocolate.smalls;
+                           }
                        },
                        function errorCallback(response) {
                            console.log("Unable to get data");
