@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ChocolateApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="js/ng-chocolate-controller.js"></script>
+    <script src="../static/js/ng-chocolate-controller.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="styleSheet.css">
+    <link rel="stylesheet" type="text/css" href="../static/styleSheet.css">
+</head>
+<body ng-controller="ChocolateControl">
+
+<!--
+{{! changing the mustache delimiter so it doesn't conflict with  }}
+{{! the default angularjs delimeters - https://mustache.github.io/mustache.5.html for more info  }}
+{{=<% %>=}}
+-->
+
+
+<h3>Welcome to my chocolate factory!</h3>
+
+<span>
+    <input ng-model="numBigs" type="text" placeholder="Big Chocolate!" name="chocolateRequest"/>
+    <input ng-model="numSmalls" type="text" placeholder="Small Chocolate!"/>
+    <input ng-model="numGoal" type="text" placeholder="Goal"/>
+</span>
+<div ng-repeat="chocIndex in makeArray(numBigs)">
+    <div class="choc-big-bar">{{chocIndex + 1}}</div>
+</div>
+<div ng-repeat="chocIndex in makeArray(numSmalls)">
+    <div class="choc-small-bar">{{chocIndex + 1}}</div>
+</div>
+
+<div>
+    <div>
+
+    </div>
+
+    <div>
+
+    </div>
+</div>
+
+<!--{{testvar}}-->
+
+
+</body>
+</html>
