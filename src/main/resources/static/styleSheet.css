@@ -1,5 +1,5 @@
 body {
-    background-image: url("https://countuponsecurity.files.wordpress.com/2014/07/goldenticket.png");
+    background-color: grey;
 
 }
 
@@ -20,7 +20,7 @@ body {
     line-height: 20px;
     font-size: 25px;
     text-align: center;
-    background-color: grey;
+    background-color: blue;
     margin: 5px;
 }
 

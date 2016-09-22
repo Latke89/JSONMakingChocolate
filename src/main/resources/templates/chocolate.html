@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
     <script src="js/ng-chocolate-controller.js"></script>
     <script src="../static/js/ng-chocolate-controller.js"></script>
 
@@ -23,10 +23,19 @@
 <h3>Welcome to my chocolate factory!</h3>
 
 <span>
-    <input ng-model="numBigs" type="text" placeholder="Big Chocolate!" name="chocolateRequest"/>
-    <input ng-model="numSmalls" type="text" placeholder="Small Chocolate!"/>
-    <input ng-model="numGoal" type="text" placeholder="Goal"/>
+    <input ng-model="numSmalls" type="text" placeholder="Small Chocolate!" name="numSmalls"/>
+    <input ng-model="numBigs" type="text" placeholder="Big Chocolate!"/>
 </span>
+
+<br/><br/>
+<h3>How many kilos of chocolate would you like to make?</h3>
+<br/>
+
+<span>
+    <input ng-model="numGoal" type="text" placeholder="Goal"/>
+    <input type="submit" ng-click="solveChocolate(numSmalls, numBigs, numGoal)" value="Solve Chocolate"/>
+</span>
+
 <div ng-repeat="chocIndex in makeArray(numBigs)">
     <div class="choc-big-bar">{{chocIndex + 1}}</div>
 </div>
