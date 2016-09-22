@@ -23,8 +23,8 @@
 <h3>Welcome to my chocolate factory!</h3>
 
 <span>
-    <input ng-model="numSmalls" type="text" placeholder="Small Chocolate!" name="numSmalls"/>
-    <input ng-model="numBigs" type="text" placeholder="Big Chocolate!"/>
+    <input ng-model="info.numSmalls" type="text" placeholder="Small Chocolate!" name="numSmalls"/>
+    <input ng-model="info.numBigs" type="text" placeholder="Big Chocolate!"/>
 </span>
 
 <br/><br/>
@@ -32,29 +32,27 @@
 <br/>
 
 <span>
-    <input ng-model="numGoal" type="text" placeholder="Goal"/>
-    <input type="submit" ng-click="solveChocolate(numSmalls, numBigs, numGoal)" value="Solve Chocolate"/>
+    <input ng-model="info.numGoal" type="text" placeholder="Goal"/>
+    <input type="submit" ng-click="solveChocolate(info.numSmalls, info.numBigs, info.numGoal)" value="Solve Chocolate"/>
 </span>
 
-<div>
-<div ng-repeat="chocIndex in makeArray(numBigs)">
+<div ng-repeat="chocIndex in makeArray(info.numBigs - finishedChocolate.bigs)">
     <div class="choc-big-bar">{{chocIndex + 1}}</div>
 </div>
-<div ng-repeat="chocIndex in makeArray(numSmalls)">
+<div ng-repeat="chocIndex in makeArray(info.numSmalls - finishedChocolate.smalls)">
     <div class="choc-small-bar">{{chocIndex + 1}}</div>
 </div>
-</div>
 
-<br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/>
 
-<div>
+
+
 <div ng-repeat="finishIndex in makeArray(finishedChocolate.bigs)">
     <div class="choc-big-bar"> {{finishIndex + 1}} </div>
 </div>
 
 <div ng-repeat="finishIndex in makeArray(finishedChocolate.smalls)">
     <div class="choc-small-bar"> {{finishIndex + 1}} </div>
-</div>
 </div>
 
 <!--{{testvar}}-->
