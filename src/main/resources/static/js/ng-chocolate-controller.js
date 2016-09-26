@@ -30,7 +30,7 @@ angular.module('ChocolateApp', [])
                console.log("About to go make chocolate!");
 
 //               $http.get("http://localhost:8080/chocolate.json?small=" + numSmalls + "&big=" + numBigs + "&goal=" + numGoal)
-               $http.get("http://bg-spring-chocolate.herokuapp.com.json?small=" + numSmalls + "&big=" + numBigs + "&goal=" + numGoal)
+               $http.get("http://bg-spring-chocolate.herokuapp.com/chocolate.json?small=" + numSmalls + "&big=" + numBigs + "&goal=" + numGoal)
                    .then(
                        function successCallback(response) {
                            console.log(response.data);
