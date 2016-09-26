@@ -37,7 +37,7 @@ angular.module('ChocolateApp', [])
                            $scope.finishedChocolate = response.data;
                            console.log($scope.finishedChocolate);
                            if ($scope.finishedChocolate.hasSolution == true) {
-                               alert("Inside the if statement");
+                               console.log("Inside the if statement")
                                $scope.info.numBigs = $scope.info.numBigs - $scope.finishedChocolate.bigs;
                                $scope.info.numSmalls = $scope.info.numSmalls - $scope.finishedChocolate.smalls;
                            }
